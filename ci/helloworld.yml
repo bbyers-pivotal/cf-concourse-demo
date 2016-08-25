@@ -1,0 +1,14 @@
+jobs:
+  - name: say-hello
+    plan:
+    - get: git-repo
+    - task: hello
+      file: git-repo/ci/tasks/hello.yml
+
+resources:
+- name: git-repo
+  type: git
+  source:
+    uri: {{GIT_REPO}}
+    branch: master
+    private_key: {{GIT_PRIVATE_KEY}}
