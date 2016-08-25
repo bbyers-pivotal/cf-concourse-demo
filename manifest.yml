@@ -5,3 +5,4 @@ applications:
   instances: 1
   host: cf-concourse-demo
   path: build/libs/meetup-0.0.1-SNAPSHOT.jar
+  services: [concourse-mysql]
